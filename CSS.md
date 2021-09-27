@@ -191,7 +191,7 @@ h3~span {
 }
 ```
 
-![image-20210926234006040](https://i.loli.net/2021/09/26/j4Hq3SurBaKxklZ.png)
+<img src="https://i.loli.net/2021/09/26/j4Hq3SurBaKxklZ.png" alt="image-20210926234006040" style="zoom: 50%;" />
 
 ### 属性选择器
 
@@ -486,6 +486,11 @@ margin的塌陷：**竖直方向的margin有塌陷现象**，小的margin会塌�
 
 
 
+### 使用浮动实现网页布局
+
+- 垂直显示的盒子，不要设置浮动，**只有并排显示的盒子才要设置浮动**
+- 一个大盒子中，又是一个小天地，内部可以继续使用浮动
+
 ### BFC 规范
 
 **块级格式化上下文**，是页面上的一个**隔离的独立容器**，容器里面的子元素不会影响到外面的元素，反之亦然
@@ -494,13 +499,20 @@ margin的塌陷：**竖直方向的margin有塌陷现象**，小的margin会塌�
 
 
 
-### 如何创建 BFC
+### 如何创建 BFC（BFC：块级格式化上下文）
 
 - 1. float 的值不是none
   2. position 的值不是 static 或者 relative
   3. display 的值是 inline-block、flex 或者 inline-flex
   4. overflow:hidden;
 
-### overflow:hidden;    // 表示溢出隐藏
+### overflow:hidden;    // 溢出将被隐藏，但是盒子的 padding 部分的溢出还在
 
 是非常好用的让盒子形成 BFC 的方法
+
+
+
+### BFC 的其他作用
+
+- BFC可以**取消盒子margin塌陷**
+- BFC可以**阻止元素被浮动元素覆盖**
