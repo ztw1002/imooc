@@ -1,0 +1,290 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+/* 去掉所有ul和ol的小圆点 */
+ul, ol {
+	list-style: none;
+}
+
+/* 去掉所有超链接下划线 */
+a {
+	text-decoration: none;
+}
+/* 使用继承性 给body标签设置字体 */
+body {
+	font: normal 14px/25px '微软雅黑';
+}
+
+header {
+	
+}
+
+header .header-top {
+	width: 1201px;
+	margin: 0 auto;
+	overflow: hidden;
+}
+
+header .header-top .logo {
+	padding-top: 27px;
+	width: 221px;
+	height: 63px;
+	float: left;
+}
+
+header .header-top .logo h1 {
+	width: 221px;
+	height: 63px;
+	/* background-color: orange; */
+}
+
+header .header-top .tool {
+	float: right;
+	width: 266px;
+	height: 77px;
+	/* background-color: green; */
+	padding-top: 22px;
+}
+header .header-top .tool .r1 {
+	margin-bottom: 14px;
+}
+header .header-top .tool .r1 .tel {
+	width: 32px;
+	height: 25px;
+}
+
+header .header-top .tool .r1 .telnumber {
+	font-size: 20px;
+	color: #00978E;
+	display: inline-block;
+	width: 158px;
+	height: 26px;
+	text-align: center;
+}
+header .header-top .tool .r1 .icon {
+	width: 24px;
+	height: 24px;
+}
+header .header-top .tool .r1 .chinese_icon {
+	margin-right: 14px;
+}
+header .header-top .tool .r2 {
+	width: 264px;
+	height: 28px;
+	border: 1px solid rgba(202,202,202,.6);
+}
+header .header-top .tool .r2 {
+	width: 264px;
+	height: 28px;
+	border: 1px solid #999999;
+}
+header .header-top .tool .r2 input {
+	float: left;
+	width: 224px;
+	height: 28px;
+	/* 去掉边框线 */
+	border: none;
+	padding-left: 20px;
+	
+	/* 去掉鼠标点击时的蓝色框 */
+	outline: none;
+}
+header .header-top .tool .r2 button {
+	float: left;
+	width: 20px;
+	height: 20px;
+	/* 背景去掉 */
+	background: none;
+	/* 边框去掉 */
+	border: none;
+	/* 去掉鼠标点击时候的蓝色边框 */
+	outline: none;
+	/* 设置触碰时候的鼠标为小手 */
+	cursor: pointer;
+	
+	/* 相对定位来微调位置 */
+	position: relative;
+	top: 4px;
+	right: 4px;
+}
+
+header .main-nav {
+	/* 不用写宽度，自动撑满 */
+	height: 60px;
+	background-color: #00978E;
+	margin-top: 20px;
+}
+header .main-nav ul {
+	width: 1200px;
+	height: 60px;
+	margin: 0 auto;
+}
+header .main-nav ul li {
+	float: left;
+	width: 150px;
+	text-align: center; 
+	line-height: 60px;
+}
+/* 又是li，又有cur类 */
+header .main-nav ul li.cur {
+	background-color: #015E58;
+}
+header .main-nav ul li a {
+	/* 转为块级元素 */
+	display: block;
+	width: 150px;
+	height: 60px;
+	font-size: 16px;
+	color: white;
+}
+header .main-nav ul li a:hover {
+	background-color: orange;
+}
+
+/* banner区域的样式 */
+.banner {
+	position: relative;
+}
+.banner .banner-img {
+	
+}
+.banner .center {
+	position: absolute;
+	width: 1200px;
+	height: 300px;
+	/* background-color: orange; */
+	top: 50%;
+	left: 50%;
+	margin-top: -150px;
+	margin-left: -600px;
+}
+
+.banner .center .left-btn {
+	position: absolute;
+	width: 56px;
+	height: 74px;
+	background-color: rgba(0,0,0,.3);
+	margin-top: -37px;
+	top: 50%;
+	left: 0;
+}
+.banner .center .right-btn {
+	position: absolute;
+	width: 56px;
+	height: 74px;
+	background-color: rgba(0,0,0,.3);
+	margin-top: -37px;
+	top: 50%;
+	
+	right: 0;
+}
+.banner .center h2 {
+	position: absolute;
+	width: 504px;
+	height: 79px;
+	font-size: 60px;
+	color: #015E58;
+	font-weight: normal;
+	top: 50%;
+	/* 垂直居中，拉回负的height的一半 */
+	margin-top: -50px;
+	left: 114px;
+}
+.banner ol {
+	position: absolute;
+	width: 120px;
+	height: 12px;
+	/* background-color: red; */
+	bottom: 20px;
+	left: 50%;
+	/* 水平居中，拉回负的width的一半 */
+	margin-left: =-60px;
+}
+.banner ol li {
+	float: left;
+	width: 20px;
+	height: 12px;
+	background-color: white;
+	margin-right: 10px;
+}
+
+/* 最后一个没有margin */
+.banner ol li:last-child {
+	margin-right: 0;
+}
+
+.banner ol li.cur {
+	width: 30px;
+	background-color: #00987E;
+}
+
+/* 内容部分 */
+.content {
+	padding-top: 71px;
+}
+.content .useful-links {
+	width: 904px;
+	height: 151px;
+	/* 居中 */
+	margin: 0 auto;
+	/* background-color: orange; */
+}
+.content .useful-links ul {
+	/* 清除浮动 */
+	overflow: hidden;
+}
+.content .useful-links ul li {
+	float: left;
+	width: 104px;
+	margin-right: 56px;
+}
+
+.content .useful-links ul li span {
+	/* 转块，不设置宽度，就相当于width属性为100%了，此时就可以文字text-align:center居中了 */
+	display: block;
+	text-align: center;
+	color: #333;
+	font-size: 20px;
+	line-height: 40px;
+}
+.content .useful-links ul li:last-child {
+	margin-right: 0;
+}
+.content .news-and-notice {
+	width: 1200px;
+	height: 376px;
+	background-color: red;
+	margin: 0 auto;
+	margin-top: 56px;
+	
+}
+.content .news-and-notice .news {
+	float: left;
+	width: 877px;
+	height: 376px;
+	background-color: blue;
+}
+.content .news-and-notice .notice {
+	float: left;
+	width: 323px;
+	height: 376px;
+	background-color: yellow;
+}
+
+.content .news-and-notice .news h3 {
+	height: 33px;
+	margin-bottom: 10px;
+}
+.content .news-and-notice .news .news-content .hot-news {
+	float: left;
+	width: 422px;
+	height: 328px;
+	margin-right: 10px;
+}
+.content .news-and-notice .news .news-content ul {
+	float: left;
+	width: 422px;
+	height: 328px;
+}
