@@ -527,7 +527,7 @@ div 属于块级元素，**块级元素天生竖直排列**
 - 清除浮动方法2：给后面的父盒子**设置 clear:both 属性**，clear 表示清除浮动对自己的影响，both 表示左右浮动都清除
   - 但是margin会失效
 - 清除浮动方法3：使用`::after`伪元素给盒子添加最后一个子元素（**一定要转成块元素**），并且给`::after`设置 clear:both
-- 清除浮动方法4：在两个父盒子之间“隔墙”，隔一个携带 clear:both的盒子
+- 清除浮动方法4：在两个父盒子之间“**隔墙**”，隔一个携带 clear:both的盒子
 
 
 
@@ -641,4 +641,194 @@ left: 100px;
 
 - **只能以页面为参考点**，没有子固父相
 - 固定定位**脱离标准文档流**
+
+### 总结
+
+使用浮动要注意父盒子要有足够的宽度，
+
+3个定位：相对定位，固定定位，绝对定位
+
+
+
+BFC：块级格式化上下文，页面上一个隔离的独立容器，容器里面的子元素不会影响到外面的元素，反之亦然。
+
+如何创建BFC：
+
+- 只要浮动了就是BFC
+- 只要定位不是相对定位或是没定位，就是BFC
+- display 的值是 inline-block 或者 flex 或者 inline-flex
+- overflow: hidden
+
+BFC的作用：清除浮动、取消盒子的margin塌陷、阻止元素被浮动类元素覆盖
+
+
+
+### 绝对定位如何实现垂直居中
+
+```css
+top: 50%
+margin-top:-自己身高的一半
+```
+
+
+
+## 边框与圆角
+
+border 属性需要三个要素
+
+```css
+border: 1px solid red;
+```
+
+solid：实线
+dashed：虚线
+dotted：点状线
+
+书写小属性可以层叠大属性
+
+四个方向的边框
+border-top/right/bottom/left 上/右/下/左边框
+
+### 去掉边框
+
+```css
+border-left: none;	/*该属性即可去掉左边框，以此类推
+```
+
+transparent：透明色
+
+### 圆角
+
+- **border-radius**属性的值通常为 px 单位，表示圆角的半径
+  border-radius 也可以以百分比为单位
+
+  border-radius: 10%;
+
+当border-radius: 50%，则为一个圆或椭圆
+
+### 盒子阴影：box-shadow
+
+![image-20211001153053799](https://i.loli.net/2021/10/01/Ur37IZaFm1HbVw4.png)
+
+<img src="https://i.loli.net/2021/10/01/cGLjmoAT7wr4UIa.png" alt="image-20211001160556759" style="zoom: 50%;" />
+
+### background-color 属性
+
+padding 区域是有背景颜色的
+
+### background-image 属性
+
+用来设置背景图片，图片路径要写到 **url() 圆括号中**
+如果样式表示外链的，那么要**书写从CSS出发到图片的路径**
+
+### backgournd-repeat 属性
+
+ <img src="https://i.loli.net/2021/10/01/vPa4ud7q2grSFLf.png" alt="image-20211001220158969" style="zoom: 33%;" />
+
+背景透明的图片会把网页的背景当做自己的背景，解决方法：
+
+```css
+background: white url(images/archer.png);
+```
+
+### background-size 属性（用来设置背景图片的尺寸）
+
+```css
+background-size: 100px 200px;
+```
+
+值也可以用百分数来设置，表示为盒子宽、高的百分之多少
+
+需要**等比例设置的值，写auto**
+
+
+
+**contain 和 cover**
+
+- contain 看完整
+- cover 不留白
+
+### background-clip 属性
+
+### （设置元素的背景裁切到哪个盒子）
+
+| 值          | 意义                          |
+| ----------- | ----------------------------- |
+| border-box  | 背景延伸至边框（默认值）      |
+| padding-box | 背景延伸至**内边**（padding） |
+| content-box | 背景被裁剪至**内容区**        |
+
+### background-attachment（背景固定）
+
+决定背景图像的位置是在视口内固定，或者随着包含它的区块滚动
+
+| 值     | 意义                                   |
+| ------ | -------------------------------------- |
+| fixed  | 自己滚动条不动，外部滚动条不动         |
+| local  | 自己滚动条动，外部滚动条动             |
+| scroll | 自己滚动条不动，外部滚动条动（默认值） |
+
+### background-position属性
+
+### （可以设置背景图片出现在盒子的什么位置）
+
+```css
+background-position: 100px 200px;
+
+background-position: top right;
+```
+
+可以用top、bottom、center、left、right描述图片出现的位置
+
+**background一些常用的背景相关小属性，可以合写到一条background属性中**
+
+### 线性渐变（属于 背景图片属性 管理）
+
+![image-20211001232834489](https://i.loli.net/2021/10/01/OHJim6WuqQrIfwC.png)
+
+可以有多个颜色值，并且可以用百分数定义它们出现的位置
+
+```css
+background-image: linear-gradient(to bottom, blue, yellow 20%, red);
+
+background-image: linear-gradient(45deg, red, blue);
+```
+
+### 浏览器私有前缀
+
+| 品牌    | 前缀     |
+| ------- | -------- |
+| chrome  | -webkit- |
+| firefox | -moz-    |
+| ie/edge | -ms-     |
+| 欧朋    | -o-      |
+
+
+
+### 径向渐变（圆形）
+
+```css
+background-image:radial-gradient(50% 50%, red, blue);
+															 /* 圆心坐标 (实际工作用得不多）*/
+```
+
+
+
+### 总结：background系列属性
+
+background-color
+background-image
+background-repeat
+background-position（可以实现CSS精灵）
+background-size
+background-clip（背景裁切）
+background-attachment（背景固定）
+
+
+
+实现渐变背景
+
+```css
+background-image: linear-gradient(to bottom, blue, yellow 20%, red);
+```
 

@@ -37,7 +37,9 @@ header .header-top .logo {
 header .header-top .logo h1 {
 	width: 221px;
 	height: 63px;
-	/* background-color: orange; */
+	background-image: url(images/logo.png);
+	/* 将段首缩进这个属性,设置为负数,可以隐藏文字 */
+	text-indent: -999em;
 }
 
 header .header-top .tool {
@@ -78,7 +80,8 @@ header .header-top .tool .r2 {
 header .header-top .tool .r2 {
 	width: 264px;
 	height: 28px;
-	border: 1px solid #999999;
+	border: 1px solid rgba(202,202,202,.6);
+	border-radius: 4px;
 }
 header .header-top .tool .r2 input {
 	float: left;
@@ -167,8 +170,13 @@ header .main-nav ul li a:hover {
 	height: 74px;
 	background-color: rgba(0,0,0,.3);
 	margin-top: -37px;
+	background: url(images/icons.png) no-repeat -42px -31px;
 	top: 50%;
 	left: 0;
+	border-radius: 6px;
+}
+.banner .center .left-btn:hover {
+	background-position: -160px -31px;
 }
 .banner .center .right-btn {
 	position: absolute;
@@ -177,8 +185,12 @@ header .main-nav ul li a:hover {
 	background-color: rgba(0,0,0,.3);
 	margin-top: -37px;
 	top: 50%;
-	
+	border-radius: 6px;
 	right: 0;
+	background: url(images/icons.png) no-repeat -42px -121px;
+}
+.banner .center .right-btn:hover {
+	background-position: -160px -121px;
 }
 .banner .center h2 {
 	position: absolute;
@@ -208,6 +220,7 @@ header .main-nav ul li a:hover {
 	height: 12px;
 	background-color: white;
 	margin-right: 10px;
+	border-radius: 4px;
 }
 
 /* 最后一个没有margin */
@@ -221,8 +234,13 @@ header .main-nav ul li a:hover {
 }
 
 /* 内容部分 */
-.content {
+.content{
 	padding-top: 71px;
+}
+.content h3 {
+	border-left: 8px solid #00978E);
+	padding-left: 10px;
+	height: 20px;
 }
 .content .useful-links {
 	width: 904px;
@@ -274,7 +292,6 @@ header .main-nav ul li a:hover {
 }
 
 .content .news-and-notice .news h3 {
-	height: 33px;
 	margin-bottom: 10px;
 }
 .content .news-and-notice .news .news-content .hot-news {
@@ -315,8 +332,7 @@ header .main-nav ul li a:hover {
 	font-weight: bold;
 }
 .content .news-and-notice .notice h3 {
-	height: 33px;
-	margin-bottom: 10px;
+	margin-bottom: 20px;
 }
 .content .news-and-notice .notice ol li {
 	overflow: hidden;
@@ -400,6 +416,7 @@ header .main-nav ul li a:hover {
 	margin-right: 17px;
 	margin-bottom: 16px;
 	color: #333;
+	border-radius: 4px;
 }
 .content .dep-info .center .col li:nth-child(2n) {
 	margin-right: 0;
@@ -445,4 +462,43 @@ header .main-nav ul li a:hover {
 	padding-left: 10px;
 	color: #333;
 	line-height: 27px;
+}
+footer {
+	height: 395px;
+	background-color: #FAFAFA;
+}
+div.center {
+	width: 1200px;
+	margin: 0 auto;
+	padding-top: 26px;
+}
+
+footer.center h3 {
+	font-size: 20px;
+	color: #333 ;
+}
+footer .center .friend-links ul{
+	overflow: hidden;
+	padding-top: 30px;
+}
+footer .center .friend-links li{
+	float: left;
+	padding: 0 50px;
+}
+footer .center .friend-links li a {
+	color: #333;
+	font-size: 16px;
+}
+footer .center address {
+	font-style: normal;
+	padding-top: 30px;
+}
+footer .center address ul {
+	width: 730px;
+	padding-top: 20px;
+}
+footer .center address ul li {
+	float: left;
+	width: 237px;
+	margin-bottom: 20px;
 }
