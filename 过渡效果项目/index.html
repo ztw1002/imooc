@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+		}
+		.box {
+			width: 1200px;
+			overflow: hidden;
+			margin: 40px auto;
+		}
+		.box ul {
+			list-style: none;
+		}
+		.box ul li {
+			float: left;
+			width: 380px;
+			height: 210px;
+			margin-right: 20px;
+			position: relative;
+		}
+		.box ul li img {
+			width: 380px;
+			height: 210px;
+		}
+		.box ul li .info {
+			position: absolute;
+			width: 370px;
+			height: 20px;
+			padding-left: 10px;
+			bottom: 0;
+			background-color: rgba(0,0,0,.5);
+			line-height: 20px;
+			color: white;
+			/* 透明度设置为0，不是背景的透明度，而是整体的透明度 */
+			opacity: 0;
+		}
+		.box ul li:hover .info{
+			opacity: 1;
+			transition: opacity .5s ease 0s;
+		}
+	</style>
+	<body>
+		<div class="box">
+			<ul>
+				<li>
+					<img src="img/1.jpg" >
+					<div class="info">鸟巢</div>
+				</li>
+				<li>
+					<img src="img/2.jpg" >
+					<div class="info">十七孔桥</div>
+				</li>
+				<li>
+					<img src="img/3.jpg" >
+					<div class="info">天坛</div>
+				</li>
+			</ul>
+		</div>
+	</body>
+</html>
