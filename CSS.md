@@ -832,3 +832,221 @@ background-attachment（背景固定）
 background-image: linear-gradient(to bottom, blue, yellow 20%, red);
 ```
 
+
+
+## 2D 与 3D
+
+### 旋转变形
+
+- 将 transform 属性的值设置为rotate()，即可实现旋转变形
+
+```css
+transform: rotate(45deg);
+								
+```
+
+```css
+.pic1 {
+  transform: rotate(45deg);
+  								/*旋转角度，角度为正则为顺时针*/
+}
+```
+
+### transform-origin属性
+
+可以使用 transform-origin 属性设置自己的**自定义变换原点**
+
+```css
+.pic6 {
+  /*以左上角为中心店进行旋转*/
+  transform-origin: 0 0;
+  transform: rotate(3odeg);
+}
+```
+
+### transform-scale 缩放变形
+
+```css
+transform: scale(3);
+						 /*缩放倍数*/
+```
+
+当数值小于1时，表示缩小元素，大于1表示放大元素
+
+### 位移变形
+
+将transform属性的值设置为translate()，即可实现位移变形
+
+```css
+transform: translate(100px, 200px);
+									/*向右移动 向下移动*/
+```
+
+位移变形会**老家留坑**，**形影分离**
+
+
+
+### 3D 旋转
+
+**将transform属性的值设置为 rotateX() 或者 rotateY()，即可实现绕横轴、纵轴旋转**
+
+```css
+transform: rotateX(30deg);
+transform: rotateY(30deg);
+```
+
+**perspective属性**：用来定义**透视强度**，可以理解为“人眼到舞台的距离”，单位px
+
+<img src="https://i.loli.net/2021/10/02/LIwTGmN4vaqhO89.png" alt="image-20211002130254708" style="zoom:50%;" />
+
+```css
+.box1 {
+  width: 202px;
+  height: 202px;
+  border: 1px solid #000
+  margin: 50px auto;
+  perspective: 300px;
+}
+.box1 p {
+  transform: rotateX(30deg);
+}
+```
+
+### 空间移动
+
+当元素进行3D旋转后，即可**继续添加** translateX()、translateY()、translateZ()属性**让元素在空间进行移动**
+
+
+
+**空间移动要添加在3D旋转之后**
+
+```css
+transform: rotateX(30deg) translateX(30px) translateZ(100px);
+```
+
+
+
+**制作一个正方体**
+
+正方体的每个面都是从舞台经过不同的3D旋转、空间移动到自己的位置
+
+
+
+## 动画
+
+### transition过渡
+
+过渡可以为一个元素在不同样式之间变化自动添加“补间动画”
+定义**开始状态** -> 定义**结束状态**
+
+transition属性有4个要素
+
+![image-20211002133057598](https://i.loli.net/2021/10/02/2tCOc3P9oKugETs.png)
+
+```css
+.box1 {
+  width: 200px;
+  height: 200px;
+  background-color: orange;
+  transition: width 5s linear 0s;
+}
+.box1:hover {
+  width:800px;
+}
+```
+
+### 哪些属性可以参与过渡
+
+- 所有数值类型的属性，都可以参与过渡，比如width、height、left、top、border-radius
+
+- 背景颜色和文字颜色都可以被过渡
+- 所有变形（包括2D和3D）都能被过渡
+
+```html
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<style type="text/css">
+		.box1 p {
+			position: relative;
+			width: 200px;
+			height: 200px;
+			background-color: orange;
+			transition: left 1s linear 0s;
+			left: 0;
+		}
+		.box1 :hover p{
+      /*
+      如果此处是 .box1 p:hover {
+        ...
+      }
+      则会出现鼠标必须跟随方框移动，才能使得方块正常移动的行为，否则方块会滞留在鼠标的位置来回抖动*/
+			left: 1000px;
+		}
+	</style>
+	<body>
+		<div class="box1">
+			<p></p>
+		</div>
+	</body>
+</html>
+```
+
+如果要所有属性都参与过渡，可以写all
+
+```css
+transition: all 1s linear 0s;
+```
+
+transition的第三个参数就是变化速度曲线
+
+浮动是实现并排的，绝对定位是实现压盖的
+
+### 动画定义
+
+使用 **@keyframes 来定义动画**，keyframe表示关键帧
+项目上线前，要补上@-webkit-这样的私有前缀
+
+<img src="https://i.loli.net/2021/10/03/kJOuoMsjzqKL9Sr.png" alt="image-20211003105318642" style="zoom:50%;" />
+
+### 动画的调用
+
+使用 animation 属性调用动画
+
+<img src="https://i.loli.net/2021/10/03/9tdhDVQzpHjyk43.png" alt="image-20211003105455478" style="zoom: 50%;" />
+
+第五个参数就是**动画的执行次数**，次数写 infinate 则永远执行
+
+### alertnate 和 forwards
+
+alertnate：（偶数次）自动逆向执行
+forwards：停止在最后结束状态
+
+### 多关键帧动画
+
+```css
+@keyframes changeColor {
+  0% {
+    background-color: red;
+  }
+  20% {
+    background=color: yellow;
+  }
+  40% {
+    background-color: blue;
+  }
+  60% {
+    background-color: green;
+  }
+  80% {
+    background-color: purple;
+  }
+  100% {
+    background-color: orange;
+  }
+}
+```
+

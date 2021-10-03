@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+			.huojian {
+				position: absolute;
+				top: 400px;
+				left: 750px;
+				animation: zd .3s linear 0s infinite alternate;
+			}
+			@keyframes zd {
+				from {
+					transform: : translateX(-20px) translateY(-20px);
+				}
+				to {
+					transform: translateX(20px) translateY(20px); 
+				}
+			}
+			.line1 {
+				width: 2px;
+				height: 80px;
+				background-color: blue;
+				position: absolute;
+				top: 500px;
+				left: 500px;
+				transform: rotate(45deg);
+				animation: yd 1s linear .7s infinite;
+				opacity: 0;
+			}
+			.line2 {
+				width: 2px;
+				height: 80px;
+				background-color: blue;
+				position: absolute;
+				top: 600px;
+				left: 750px;
+				transform: rotate(45deg);
+				animation: yd 1s linear .5s infinite;
+				opacity: 0;
+			}
+			.line3 {
+				width: 2px;
+				height: 80px;
+				background-color: blue;
+				position: absolute;
+				top: 800px;
+				left: 800px;
+				transform: rotate(45deg);
+				animation: yd 1s linear 0s infinite;
+				opacity: 0;
+			}
+			.line4 {
+				width: 2px;
+				height: 80px;
+				background-color: blue;
+				position: absolute;
+				top: 400px;
+				left: 650px;
+				transform: rotate(45deg);
+				animation: yd 1s linear .7s infinite;
+				opacity: 0;
+			}
+			.line5 {
+				width: 2px;
+				height: 80px;
+				background-color: blue;
+				position: absolute;
+				top: 470px;
+				left: 1000px;
+				transform: rotate(45deg);
+				animation: yd 1s linear .7s infinite;
+				opacity: 0;
+			}
+			.line6 {
+				width: 2px;
+				height: 80px;
+				background-color: blue;
+				position: absolute;
+				top: 900px;
+				left: 1500px;
+				transform: rotate(45deg);
+				animation: yd 1s linear .7s infinite;
+				opacity: 0;
+			}
+			@keyframes yd {
+				0% {
+					transform:  rotate(45deg) translateY(-300px);
+					opacity: 0;
+				}
+				50% {
+					opacity: 1;
+				}
+				to {
+					transform: rotate(45deg) translateY(300px);
+					opacity: 0;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<img src="./img/huojian.png" alt="" class="huojian">
+		<div class="line1"></div>
+		<div class="line2"></div>
+		<div class="line3"></div>
+		<div class="line4"></div>
+		<div class="line5"></div>
+		<div class="line6"></div>
+	</body>
+</html>
